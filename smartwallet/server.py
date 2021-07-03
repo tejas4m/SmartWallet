@@ -1,4 +1,5 @@
 from waitress import serve
+from django import *
     
 from smartwallet.wsgi import application
     
