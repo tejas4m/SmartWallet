@@ -2,10 +2,11 @@
 
 
 {% block content %}
-
+<div class="container-fluid" >
+{% include 'partials/_messages.html' %}
   <h1>Expenses List</h1>
 
-<ul class"list-group">
+<ul class="list-group">
    <li class=list-group-item >bought milk</li>
    <li class=list-group-item >bought milk</li>
 
@@ -21,5 +22,5 @@
    <li class=list-group-item >bought milk</li>
 
 </ul>
-
+</div>
 {% endblock %}

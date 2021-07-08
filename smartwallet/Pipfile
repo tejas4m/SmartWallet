@@ -9,6 +9,7 @@ django-waitress = "*"
 django-heroku = "*"
 gunicorn = "*"
 django = "*"
+python-dotenv = {extras = ["cli"], version = "*"}
 
 [dev-packages]
 
