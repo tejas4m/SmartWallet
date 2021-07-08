@@ -11,3 +11,12 @@
       font-size: 3.5rem;
     }
   }
+
+  #show-hide {
+    cursor: pointer;
+    transition: all;
+  }
+  #show-hide:hover{
+    transform: scale(1.2);
+  }
+ 

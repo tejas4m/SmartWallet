@@ -4,11 +4,7 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-psycopg2 = "*"
-django-waitress = "*"
-django-heroku = "*"
-gunicorn = "*"
-django = "*"
+validate-email = "*"
 
 [dev-packages]
 
