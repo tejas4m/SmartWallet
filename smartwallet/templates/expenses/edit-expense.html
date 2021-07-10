@@ -4,17 +4,26 @@
    
 
 <div class="container-fluid mt-4">
-<nav aria-label="breadcrumb">
-  <ol class="breadcrumb">
-    <li class="breadcrumb-item">
-      <a href="{% url 'expenses' %}">Expenses</a></li>
-    <li class="breadcrumb-item active" aria-current="page">Add Expenses</li>
-  </ol>
-</nav>
+<div class="row">
+    <div class="col-md-10">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item">
+                <a href="{% url 'expenses' %}">Expenses</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Edit Expenses</li>
+            </ol>
+          </nav>
+          
+    </div>
+    <div class="col-md-2">
+       <a href="{% url 'expense-delete' expense.id %}" class="btn btn-danger btn-sm my-3">Delete</a>
+    </div>
+</div>
+
 
 
   <div class="card">
-    <form action="{% url 'add-expenses' expense.id %}" method="post">
+    <form action="{% url 'expense-edit' expense.id %}" method="post">
 
         {% include 'partials/_messages.html' %}
               {% csrf_token %}
@@ -30,6 +39,8 @@
       <div class="form-group my-2">
         <label for="">Category </label>
         <select name="category" class="Form-control" >
+            <option name="category" selected >{{values.category}}</option>
+
           {% for category in categories %}
                <option name="category" >{{category.name}}</option>
           {% endfor %}
@@ -43,7 +54,7 @@
       
 
      </div>
-    <button class="btn btn-primary btn-primary-sm " type="submit" value="submit" style="margin-left: 15px;" >Submit</button>
+    <button class="btn btn-primary btn-primary-sm " type="submit" value="Save" style="margin-left: 15px;" >Save</button>
     </form>
   </div>
 

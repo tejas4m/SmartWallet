@@ -10,6 +10,7 @@ django-heroku = "*"
 gunicorn = "*"
 django = "*"
 python-dotenv = {extras = ["cli"], version = "*"}
+validate-email = "*"
 
 [dev-packages]
 
