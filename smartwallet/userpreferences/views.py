@@ -7,6 +7,7 @@ from django.conf import settings
 from .models import UserPreferences
 from django.contrib import messages
 
+
 # Create your views here.
 def index(request):
      currency_data=[]

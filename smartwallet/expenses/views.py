@@ -3,6 +3,7 @@ from django.shortcuts import redirect, render
 from django.contrib.auth.decorators import login_required
 from .models import Category, Expense
 from django.contrib import messages
+from userpreferences.models import UserPreferences
 
 # Create your views here.
 
@@ -11,13 +12,15 @@ from django.contrib import messages
 def index(request):
     categories = Category.objects.all()
     expense =Expense.objects.filter(owner = request.user)
+    currency = UserPreferences.objects.get(user = request.user).currency
 
     context ={
-        'expenses' : expense
+        'expenses' : expense,
+        'currency':currency
     }
 
     return render(request,'expenses/index.html',context)
-def add_expense(request)    :
+def add_expense(request )    :
      categories = Category.objects.all()
      context ={'categories':categories,
                 'values' : request.POST
@@ -63,7 +66,7 @@ def expense_edit(request,id):
         amount = request.POST['amount']
         if not amount:
             messages.error(request,'Amount is required')
-            return render(request,'expenses/edit-xpense.html',context)
+            return render(request,'expenses/edit-expense.html',context)
 
         description = request.POST['description']
         date = request.POST['expense_date']
