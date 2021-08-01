@@ -15,11 +15,11 @@ import datetime
 def index(request):
     categories = Category.objects.all()
     expense =Expense.objects.filter(owner = request.user)
-    currency = UserPreferences.objects.get(user = request.user).currency
+  #  currency = UserPreferences.objects.get(user = request.user).currency
 
     context ={
         'expenses' : expense,
-        'currency':currency
+       # 'currency':currency
     }
 
     return render(request,'expenses/index.html',context)

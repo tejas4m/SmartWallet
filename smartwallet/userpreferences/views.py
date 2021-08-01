@@ -23,7 +23,8 @@ def index(request):
 
      if exists:
        user_preferences =  UserPreferences.objects.get(user= request.user)
-
+     else:
+       user_preferences = None
 
      if request.method == 'GET':
          
