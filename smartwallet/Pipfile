@@ -4,13 +4,10 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-psycopg2 = "*"
-django-waitress = "*"
-django-heroku = "*"
-gunicorn = "*"
-django = "*"
-python-dotenv = {extras = ["cli"], version = "*"}
 validate-email = "*"
+gunicorn = "*"
+django-heroku = "*"
+dj-database-url = "*"
 
 [dev-packages]
 
