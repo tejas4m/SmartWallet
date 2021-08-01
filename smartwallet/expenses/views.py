@@ -25,7 +25,8 @@ def index(request):
     return render(request,'expenses/index.html',context)
 def add_expense(request )    :
      categories = Category.objects.all()
-     context ={'categories':categories,
+     context ={
+         'categories':categories,
                 'values' : request.POST
                }
     
@@ -41,7 +42,7 @@ def add_expense(request )    :
 
         description = request.POST['description']
         date = request.POST['expense_date']
-        category = request.POST['category']
+        category = request.POST['category', False]
         if not description:
             messages.error(request,'Description is required')
             return render(request,'expenses/add_expense.html',context)\
